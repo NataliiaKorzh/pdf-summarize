@@ -21,7 +21,7 @@ async def summarize(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Uploaded file must be a PDF")
 
     try:
-        text = extract_text_from_pdf(file.file)
+        text = extract_text_from_pdf(file)
         if not text:
             raise HTTPException(status_code=400, detail="Could not extract text from PDF")
 
