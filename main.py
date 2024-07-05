@@ -45,7 +45,7 @@ async def summarize(file: UploadFile = File(...)):
 
         )
 
-        summary = response.choices[0].message["content"].strip()
+        summary = response.choices[0].text.strip()
 
         return {"summary": summary}
 
